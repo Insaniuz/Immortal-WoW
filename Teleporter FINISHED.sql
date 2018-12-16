@@ -27,7 +27,9 @@ INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `b
  (99001, 19, 0, 'Are you inlove?', 12, 0, 100, 0, 0, 0, 0, 0, 'Hearts tag'),
  (99001, 20, 0, 'Are you sleepy?', 12, 0, 100, 0, 0, 0, 0, 0, 'Sleep tag'),
  (99001, 21, 0, 'Your aura has been removed.', 12, 0, 100, 0, 0, 0, 0, 0, 'Remove aura'),
- (99001, 22, 0, 'All auras have been removed.', 12, 0, 100, 0, 0, 0, 0, 0, 'Remove all auras');
+ (99001, 22, 0, 'All auras have been removed.', 12, 0, 100, 0, 0, 0, 0, 0, 'Remove all auras'),
+ (99001, 23, 0, 'I see you want to mask yourself into someone else ha? Very nice, here is what I can do', 12, 0, 100, 0, 0, 0, 0, 0, 'Morph');
+
  
  -- Gossip menu options
  INSERT INTO `gossip_menu_option` (`MenuID`, `OptionID`, `OptionIcon`, `OptionText`, `OptionBroadcastTextID`, `OptionType`, `OptionNpcFlag`, `ActionMenuID`, `ActionPoiID`, `BoxCoded`, `BoxMoney`, `BoxText`, `BoxBroadcastTextID`, `VerifiedBuild`) VALUES 
@@ -53,7 +55,8 @@ INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `b
 (51900, 20, 10, '|TInterface/ICONS/Achievement_Boss_LichKing:35:35|t|cFF0000FFWrath Dungeons', 0, 1, 1, 51903, 0, 0, 0, NULL, 0, 0),
 (51900, 21, 10, '|TInterface/ICONS/Achievement_Boss_Sindragosa:35:35|t|cFF4000FFRaid Teleports', 0, 1, 1, 51904, 0, 0, 0, NULL, 0, 0),
 (51900, 22, 10, '|TInterface/ICONS/inv_enchant_essencemysticallarge:35:35|t|cFF642EFEVisual Spells', 0, 1, 1, 51910, 0, 0, 0, NULL, 0, 0),
-(51900, 23, 10, '|TInterface/ICONS/Spell_shadow_deathscream:35:35|t|cFF8A0808Remove Ressurection Sickness', 0, 1, 1, 0, 0, 0, 0, NULL, 0, 0),
+(51900, 23, 10, '|TInterface/ICONS/ability_creature_cursed_01:35:35|t|cFF642EFEMorph', 0, 1, 1, 51911, 0, 0, 0, NULL, 0, 0),
+(51900, 24, 10, '|TInterface/ICONS/Spell_shadow_deathscream:35:35|t|cFF8A0808Remove Ressurection Sickness', 0, 1, 1, 0, 0, 0, 0, NULL, 0, 0),
 (51901, 0, 2, '|TInterface/ICONS/Achievement_Character_Gnome_Male:35:35|tGnomeregan', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
 (51901, 1, 2, '|TInterface/ICONS/Achievement_Boss_Bazil_Thredd:35:35|tThe Deadmines', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
 (51901, 2, 2, '|TInterface/ICONS/Achievement_Boss_EdwinVancleef:35:35|tThe Stockade', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
@@ -213,7 +216,26 @@ INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `b
 (51910, 21, 10, '|cff800517Remove Tag: Sleep', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
 (51910, 22, 10, '|cff000080============================', 0, 1, 1, 0, 0, 0, 0, NULL, 0, 0),
 (51910, 23, 10, '|cffff0000Remove All Auras!', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
-(51910, 24, 0, '|TInterface/ICONS/Mail_GMIcon:35:35|t<<Back>>', 0, 1, 1, 51900, 0, 0, 0, NULL, 0, 0);
+(51910, 24, 0, '|TInterface/ICONS/Mail_GMIcon:35:35|t<<Back>>', 0, 1, 1, 51900, 0, 0, 0, NULL, 0, 0),
+(51911, 0, 0, ' |TInterface/icons/Achievement_Character_Tauren_Male:30|t |rMorph me into a Male Tauren', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 1, 0, ' |TInterface/icons/Achievement_Character_Tauren_Female:30|t |rMorph me into a Female Tauren', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 2, 0, ' |TInterface/icons/Achievement_Character_Gnome_Male:30|t |rMorph me into a Male Gnome', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 3, 0, ' |TInterface/icons/Achievement_Character_Gnome_Female:30|t |rMorph me into a Female Gnome', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 4, 0, ' |TInterface/icons/Achievement_Character_Bloodelf_Male:30|t |rMorph me into a Male Blood Elf', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 5, 0, ' |TInterface/icons/Achievement_Character_Bloodelf_Female:30|t |rMorph me into a Female Blood Elf', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 6, 0, ' |TInterface/icons/ability_deathknight_brittlebones:30|t |rMorph me into a Skeleton', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 7, 0, ' |TInterface/icons/Spell_Magic_PolymorphPig:30|t |rMorph me into a Wild Pig', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 8, 0, ' |TInterface/icons/Spell_Magic_PolymorphPig:30|t |rMorph me into a Pig', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 9, 0, ' |TInterface/icons/Spell_Shadow_SummonFelGuard.png:30|t |rMorph me into a Dreadlord', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 10, 0, ' |TInterface/icons/Spell_Shadow_SummonSuccubus:30|t |rMorph me into a Succubus', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 11, 0, ' |TInterface/icons/Achievement_Character_Human_Female:30|t |rMorph me into a Female Human', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 12, 0, ' |TInterface/icons/Achievement_Character_Human_Male:30|t |rMorph me into a Male Human', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 13, 0, ' |TInterface/icons/inv_misc_stormdragongreen:30|t |rMorph me into a Green Dragon', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 14, 0, ' |TInterface/icons/Achievement_Boss_Bazil_Thredd.png:30|t |rMorph me into a Ninja', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 15, 0, ' |TInterface/icons/Spell_Magic_PolymorphRabbit:30|t |rMorph me into a Rabbit', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 16, 0, ' |TInterface/icons/Achievement_Reputation_Ogre:30|t |rMorph me into a Ogre', 0, 1, 1, 0, 0, 0, 0, 'Are you sure?', 0, 0),
+(51911, 17, 0, '|TInterface/ICONS/Mail_GMIcon:35:35|t<<Back>>', 0, 1, 1, 51900, 0, 0, 0, NULL, 0, 0);
+
 
 -- SAI
  INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `event_param5`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_param4`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`) VALUES
@@ -380,7 +402,7 @@ INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `b
  (99001, 0, 168, 170, 62, 0, 100, 0, 51910, 23, 0, 0, 0, 28, 20372, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Visual Spells Tab'),
  (99001, 0, 169, 170, 62, 0, 100, 0, 51910, 23, 0, 0, 0, 28, 20373, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Visual Spells Tab'),
  (99001, 0, 170, 0, 61, 0, 100, 0, 0, 0, 0, 0, 0, 72, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Close Gossip'),
- (99001, 0, 171, 0, 62, 0, 100, 0, 51900, 23, 0, 0, 0, 28, 15007, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Remove Ressurection Sickness'),
+ (99001, 0, 171, 0, 62, 0, 100, 0, 51900, 24, 0, 0, 0, 28, 15007, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Remove Ressurection Sickness'),
  (99001, 0, 172, 0, 62, 0, 100, 0, 51900, 11, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Custom Zones Say'),
  (99001, 0, 173, 0, 62, 0, 100, 0, 51900, 14, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Eastern Kingdoms Say'),
  (99001, 0, 174, 0, 62, 0, 100, 0, 51900, 15, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Kalimdor Say'),
@@ -390,7 +412,7 @@ INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `b
  (99001, 0, 178, 0, 62, 0, 100, 0, 51900, 19, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'TBC Dungs say'),
  (99001, 0, 179, 0, 62, 0, 100, 0, 51900, 20, 0, 0, 0, 1, 7, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Wrath Dungs say'),
  (99001, 0, 180, 0, 62, 0, 100, 0, 51900, 21, 0, 0, 0, 1, 8, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Raids Say'),
- (99001, 0, 182, 0, 62, 0, 100, 0, 51900, 23, 0, 0, 0, 1, 10, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Remove Sickness Say'),
+ (99001, 0, 182, 0, 62, 0, 100, 0, 51900, 24, 0, 0, 0, 1, 10, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Remove Sickness Say'),
  (99001, 0, 183, 0, 62, 0, 100, 0, 51910, 0, 0, 0, 0, 1, 11, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Durak Shield Say'),
  (99001, 0, 184, 0, 62, 0, 100, 0, 51910, 1, 0, 0, 0, 1, 12, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Shadowmourne Say'),
  (99001, 0, 185, 0, 62, 0, 100, 0, 51910, 2, 0, 0, 0, 1, 13, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Purple Banish Say'),
@@ -411,5 +433,24 @@ INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `b
  (99001, 0, 200, 0, 62, 0, 100, 0, 51910, 19, 0, 0, 0, 1, 21, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Remove Single Aura Say'),
  (99001, 0, 201, 0, 62, 0, 100, 0, 51910, 20, 0, 0, 0, 1, 21, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Remove Single Aura Say'),
  (99001, 0, 202, 0, 62, 0, 100, 0, 51910, 21, 0, 0, 0, 1, 21, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Remove Single Aura Say'),
- (99001, 0, 203, 0, 62, 0, 100, 0, 51910, 23, 0, 0, 0, 1, 22, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Remove all auras Say');
+ (99001, 0, 203, 0, 62, 0, 100, 0, 51910, 24, 0, 0, 0, 1, 22, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Remove all auras Say'),
+ (99001, 0, 204, 170, 62, 0, 100, 0, 51911, 6, 0, 0, 0, 75, 21751, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 205, 170, 62, 0, 100, 0, 51911, 5, 0, 0, 0, 75, 37806, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 206, 170, 62, 0, 100, 0, 51911, 4, 0, 0, 0, 75, 37807, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 207, 170, 62, 0, 100, 0, 51911, 3, 0, 0, 0, 75, 37809, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 208, 170, 62, 0, 100, 0, 51911, 2, 0, 0, 0, 75, 37808, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 209, 170, 62, 0, 100, 0, 51911, 10, 0, 0, 0, 75, 8315, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 210, 170, 62, 0, 100, 0, 51911, 0, 0, 0, 0, 75, 37810, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 211, 170, 62, 0, 100, 0, 51911, 1, 0, 0, 0, 75, 37811, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 212, 170, 62, 0, 100, 0, 51911, 7, 0, 0, 0, 75, 17533, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 213, 170, 62, 0, 100, 0, 51911, 8, 0, 0, 0, 75, 8324, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 214, 170, 62, 0, 100, 0, 51911, 9, 0, 0, 0, 75, 8321, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 215, 170, 62, 0, 100, 0, 51911, 11, 0, 0, 0, 75, 37805, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 216, 170, 62, 0, 100, 0, 51911, 12, 0, 0, 0, 75, 35466, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 217, 170, 62, 0, 100, 0, 51911, 13, 0, 0, 0, 75, 8360, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 218, 170, 62, 0, 100, 0, 51911, 14, 0, 0, 0, 75, 24711, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 219, 170, 62, 0, 100, 0, 51911, 15, 0, 0, 0, 75, 61716, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 220, 170, 62, 0, 100, 0, 51911, 16, 0, 0, 0, 75, 30167, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Illusion Giver Script'),
+ (99001, 0, 221, 0, 62, 0, 100, 0, 51900, 23, 0, 0, 0, 1, 23, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Morph say');
+
 
